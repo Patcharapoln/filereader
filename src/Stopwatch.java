@@ -1,38 +1,53 @@
 
+/**
+ * A Stopwatch that measures elapsed time between a starting time and stopping
+ * time, or until the present time.
+ * 
+ * @author Patcharapol Nirunpornputta
+ */
 public class Stopwatch {
+	/** true is running , false is stop. **/
 	private boolean status = false;
 	private long start;
 	private long stop;
 	private static final double NANOSECONDS = 1.0E-9;
 
-	void start() {
-		if(isRunning()) return;
+	/**
+	 * Start stop watch. If it's not running.
+	 */
+	public void start() {
+		if (isRunning())
+			return;
 		status = true;
 		start = System.nanoTime();
 	}
 
-	void stop() {
-		if(!isRunning()) return;
+	/**
+	 * Stop stop watch. If it's running.
+	 */
+	public void stop() {
+		if (!isRunning())
+			return;
 		status = false;
 		stop = System.nanoTime();
 	}
 
-	boolean isRunning() {
+	/**
+	 * Check stop watch is running or not.
+	 * @return status of stop watch.
+	 */
+	public boolean isRunning() {
 		return status;
 	}
 
-	double getElapsed() {
+	/**
+	 * If stop watch is running compute elapsed time from start to this current time.
+	 * else compute elapsed time until start to stop.
+	 * @return elapsed time in second with decimal.
+	 */
+	public double getElapsed() {
 		if (status)
-			return (System.nanoTime() - this.start)*NANOSECONDS;
-		return (this.stop-this.start)*NANOSECONDS;
-	}
-
-	public static void main(String[] args) {
-		Stopwatch watch = new Stopwatch();
-		watch.start();
-		watch.stop();
-		System.out.println(watch.getElapsed());
+			return (System.nanoTime() - this.start) * NANOSECONDS;
+		return (this.stop - this.start) * NANOSECONDS;
 	}
 }
-
-
