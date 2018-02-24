@@ -4,7 +4,7 @@
  *
  */
 public class TaskTimer{
-	private static String name = "/Users/mark/Documents/OOP/filereader/Alice_in_wonderland.txt";
+	private final String name = "/Users/mark/Documents/OOP/filereader/Alice_in_wonderland.txt";
 	private Stopwatch watch = new Stopwatch();
 	
 	/**
