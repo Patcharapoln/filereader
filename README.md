@@ -7,7 +7,7 @@ Task      |  Time
 ----------|----------
 Read file 1-char at a time to String | 0.606073 sec
 Read file 1-char at a time to StringBuilder | 0.016909 sec
-Read file line at a time using StringBuilder | 0.021058 sec
+Read file line at a time using BufferedReader | 0.021058 sec
 
 ## Explaination of Results
 * **Read file 1 char at a time to Sring** is slowest because when you add a string to computer it will consume your 
